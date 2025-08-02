@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 from src.helper import download_embeddings
 from langchain_pinecone import PineconeVectorStore
-from langchain_groq import ChatGroq   
+from langchain_groq import ChatGroq
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
@@ -11,10 +11,12 @@ import os
 import psutil  # 🔹 ADDED
 import os
 
+
 # 🔹 MEMORY CHECK FUNCTION
 def log_memory(note=""):
     mem = psutil.Process(os.getpid()).memory_info().rss / (1024 * 1024)
     print(f"[MEMORY] {note}: {mem:.2f} MB")
+
 
 app = Flask(__name__)
 load_dotenv()
@@ -32,34 +34,28 @@ log_memory("After loading embeddings")  # 🔹 ADDED
 index_name = "med-chatbot-index"
 
 docsearch = PineconeVectorStore.from_existing_index(
-    index_name=index_name,
-    embedding=embeddings
+    index_name=index_name, embedding=embeddings
 )
 log_memory("After loading Pinecone index")  # 🔹 ADDED
 
-retriever = docsearch.as_retriever(
-    search_type="similarity",
-    search_kwargs={"k": 1}
-)
+retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k": 1})
 
 log_memory("Before loading chat model")  # 🔹 ADDED
-chat_model = ChatGroq(
-    groq_api_key=os.getenv("GROQ_API_KEY"),
-    model="llama3-8b-8192"
-)
+chat_model = ChatGroq(groq_api_key=os.getenv("GROQ_API_KEY"), model="llama3-8b-8192")
 log_memory("After loading chat model")  # 🔹 ADDED
 
-prompt = ChatPromptTemplate.from_messages([
-    ("system", system_prompt),
-    ("human", "{input}")
-])
+prompt = ChatPromptTemplate.from_messages(
+    [("system", system_prompt), ("human", "{input}")]
+)
 
 question_answer_chain = create_stuff_documents_chain(chat_model, prompt)
 rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
-@app.route('/')
+
+@app.route("/")
 def index():
-    return render_template('chat.html')
+    return render_template("chat.html")
+
 
 @app.route("/get", methods=["GET", "POST"])
 def chat():
@@ -80,9 +76,5 @@ def chat():
     return jsonify({"answer": response["answer"]})
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
-
-
-

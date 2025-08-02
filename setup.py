@@ -1,4 +1,4 @@
-from setuptools import find_packages,setup
+from setuptools import find_packages, setup
 
 setup(
     name="med_chatbot",
@@ -6,6 +6,5 @@ setup(
     author="Aditya Jayashankar",
     author_email="adityajayashankar@gmail.com",
     packages=find_packages(),
-    install_requires=[]
-    
+    install_requires=[],
 )
