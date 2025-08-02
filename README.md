@@ -32,7 +32,7 @@ This project is built using **LangChain** to orchestrate the workflow, **Pinecon
 | Backend      | Python 3.11, LangChain      |
 | LLM          | Groq                        |
 | Vector Store | Pinecone                    |
-| Backend      | Flask                       |
+| Frontend     | Flask                       |
 | CI/CD        | GitHub Actions              |
 | Deployment   | Render                      |
 
