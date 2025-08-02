@@ -36,7 +36,12 @@ jobs:
       - name: Check code formatting with black
         # The workflow will fail if code is not formatted correctly.
         run: black --check .
+        
+      - name: Lint with Flake8
+        # This checks for stylistic errors and potential bugs.
+        run: flake8 .
 
       - name: Run tests with Pytest
         # This executes the project's test suite to ensure functionality.
         run: pytest
+
