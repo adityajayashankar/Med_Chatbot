@@ -98,13 +98,11 @@ The Continuous Integration pipeline is configured in .github/workflows/ci.yml an
 Code Linting: Checks for code style and quality using flake8.
 Unit & Integration Testing: Runs the test suite using pytest.
 
-## 📝 License
-This project is licensed under the Apache License 2.0. See the LICENSE file for more details.
-
-
-
 ## 🙌 Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
+
+## 📝 License
+This project is licensed under the Apache License 2.0. See the LICENSE file for more details.
 
 ## Developed by Aditya Jayashankar
 📧 adityajayashankar@gmail.com
