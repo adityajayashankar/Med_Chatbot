@@ -1,11 +1,15 @@
+# render.yaml
+
 services:
-  - type: web
-    name: med-chatbot
+  # A name for your web service
+  - name: med-chatbot
+    # The type of service
+    type: web
+    # The environment (e.g., Python, Node)
     env: python
+    # Specify the free plan
+    plan: free
+    # The command to install dependencies
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "python app.py"
-    envVars:
-      - key: PINECONE_API_KEY
-        sync: false
-      - key: GROQ_API_KEY
-        sync: false
+    # The command to start your application
+    startCommand: "gunicorn app:app"
