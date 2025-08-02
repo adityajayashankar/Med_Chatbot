@@ -11,6 +11,7 @@
 Med_Chatbot is an intelligent, conversational AI designed to provide information from medical literature. It leverages a **Retrieval-Augmented Generation (RAG)** pipeline to deliver accurate and context-aware answers based on a foundational medical text.
 
 This project is built using **LangChain** to orchestrate the workflow, **Pinecone** as the vector database for efficient knowledge retrieval, and **Grok** as the core Large Language Model for generating human-like responses. The application is served through a clean web interface built with Flask and is deployed on **Render** with a full CI/CD pipeline.
+> ⚠️ **Important Note:** The live Render deployment is currently paused as the application's memory requirements exceed the free tier limits. However, the project is fully functional and can be run on your local machine by following the setup instructions below.
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=plastic&logo=rocket)](https://med-chatbot.onrender.com)
 
