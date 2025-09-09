@@ -1,4 +1,4 @@
-# 🩺 Medical Chatbot (RAG-based) 🤖
+ # Medical Chatbot (RAG-based) 
 
 <div align="center">
 
@@ -15,7 +15,7 @@ This project is built using **LangChain** to orchestrate the workflow, **Pinecon
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=plastic&logo=rocket)](https://med-chatbot.onrender.com)
 
-## ✨ Features
+## Features
 
 * **Retrieval-Augmented Generation (RAG):** Answers are grounded in the provided medical text (`Medical_book.pdf`), reducing hallucinations and ensuring factual accuracy.
 * **High-Performance Vector Search:** Utilizes **Pinecone** to store and retrieve relevant text embeddings with high speed and efficiency.
@@ -25,7 +25,7 @@ This project is built using **LangChain** to orchestrate the workflow, **Pinecon
 * **Cloud Deployment:** Seamlessly deployed and scalable on the **Render** platform.
 
 ***
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer        | Technology                  |
 |--------------|-----------------------------|
@@ -39,7 +39,7 @@ This project is built using **LangChain** to orchestrate the workflow, **Pinecon
 ---
 
 ***
-## 🚀 Getting Started
+## Getting Started
 
 Follow these instructions to set up and run the project on your local machine.
 
@@ -86,19 +86,19 @@ Open your web browser and navigate to http://127.0.0.1:5000 to start chatting wi
 
 ```
 
-## ☁️ Deployment
+##  Deployment
 This application is configured for deployment on Render.<br>
 The service is set to auto-deploy upon successful CI checks on the main branch, ensuring a smooth and automated deployment workflow.
 
 You can access the live application here:
 https://medical-chatbot-mc0g.onrender.com
 
-## 🤖 CICD Pipeline
+## CICD Pipeline
 The Continuous Integration pipeline is configured in .github/workflows/ci.yml and performs the following checks on every push to the main branch:
 Code Linting: Checks for code style and quality using flake8.
 Unit & Integration Testing: Runs the test suite using pytest.
 
-## 🙌 Contributing
+## Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
 
 ## 📝 License
